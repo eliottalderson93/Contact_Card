@@ -1,0 +1,2 @@
+This project will create contact cards based on user input in html. This 
+demonstrates using forms and inputs in jQuery.

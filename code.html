@@ -1,0 +1,90 @@
+<html>
+
+<head>
+    <title>Users Document</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(document).on('click','.front_card p',function () { //".front_card p"
+                console.log(8);
+                $('.front_card').html(
+                    "<div class='back_card'><p id='mail_table'></p></div>"
+                );
+                $('#mail_table').append(desc);
+                $('#submitme').submit(function () {
+                });
+                // $('back_card').css('visibility', 'visible');
+                // console.log($('.back_card').css('visibility'));
+            });
+            $(document).on('submit','#submitme',function () { //submitme
+                $('.new_card').children().removeAttr('id');
+                $('.iter_card').html(
+                    "<div class = 'new_card'><div class='front_card'><h1 id='fn_table'></h1><h1 id='ln_table'></h1><p id='flip'>Click to flip</p></div><div class = 'iter_card'></div>"
+                );
+                var first = $('#fn').val();
+                var last = $('#ln').val();
+                var desc = $('#mail').val();
+                // console.log(5);
+                // console.log($('#fn'));
+                $('#fn_table').append(first);
+                $('#ln_table').append(last);
+                // $('#phone_table').append($('#phone').val());
+                return false;
+            });
+            // return false;
+            // $('#submitme').submit();
+        });
+
+    </script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <ul>
+                <li>First Name</li>
+                <li>Last Name</li>
+                <li>Email Address</li>
+                <li>Contact No.</li>
+            </ul>
+        </div>
+        <h1 class='user'>Add User</h1>
+        <form class='form_input' id='submitme'>
+            <p>First Name:</p>
+            <input type='text' class='box' id='fn' name="first_name" label=''>
+            <p>Last Name:</p>
+            <input type='text' class='box' id='ln' name="last_name" label=''>
+            <p>Decription:</p>
+            <input type='textarea' class='box' id='mail' name='email' label=''>
+            <input type='submit' value='submit' id='btn' class='submit'>
+        </form>
+        <div class='new_card'>
+            <div class='front_card'>
+                <h1 id='fn_table'></h1>
+                <h1 id='ln_table'></h1>
+                <p id='flip'>Click to flip</p>
+            </div>
+        </div>
+        <div class='iter_card'></div>
+        <!-- <table>
+            <tr>
+                <th>New User</th>
+            </tr>
+            <tr>
+                <td id="fn_table"></td>
+            </tr>
+            <tr>
+                <td id='ln_table'></td>
+            </tr>
+            <tr>
+                <td id='mail_table'></td>
+            </tr>
+            <tr>
+                <td id='phone_table'></td>
+            </tr> -->
+        </table>
+    </div>
+</body>
+
+</html>
